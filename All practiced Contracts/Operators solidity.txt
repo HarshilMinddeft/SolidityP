@@ -1,0 +1,46 @@
+Operators In solidity usage
+The operators ** (exponentiation),
+<< and >> use the type of the left operand for the operation and the result.
+
+Exponentiation (**):
+The type of the left operand is used for the operation,
+and the result will have the same type as the left operand.
+
+pragma solidity ^0.8.0;
+
+contract ExponentiationExample {
+    uint8 public result;
+
+    function calculateExponentiation() public {
+        uint8 base = 2;
+        uint256 exponent = 3;
+
+        result = base ** exponent; // The result will have type uint8
+//Output will be 8 because 2 will be multiplyed 3 times 
+    }
+}
+
+
+Left Shift (<<) and Right Shift (>>):
+The type of the left operand is used for the operation,
+and the result will have the same type as the left operand.
+
+pragma solidity ^0.8.0;
+
+contract ShiftExample {
+    uint16 public resultLeftShift;
+    int256 public resultRightShift;
+
+    function performShiftOperations() public {
+        uint16 valueToShift = 5;
+        int256 valueToShiftRight = -8;
+
+        // Left Shift
+        resultLeftShift = valueToShift << 2; // The result will have type uint16
+// Result will b 20 5 will be multiplyed with 2, 2 times eg 5x2 10 , 10x2 20
+
+        // Right Shift
+        resultRightShift = valueToShiftRight >> 1; // The result will have type int256
+// Result in this case it will Divide with 2 times 1 =4
+    }
+}
