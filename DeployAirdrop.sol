@@ -3,32 +3,26 @@ pragma solidity ^0.8.2;
 
 import {IERC20, SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {MerkleProof} from "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
-// import "./IERC20.sol";
 
 contract MerkleDistributor {
     using SafeERC20 for IERC20;
     address public  token;
     bytes32 public  merkleRoot;
     mapping(address => uint256) private addressesClaimed;
-    uint256 AirdropAmount;
-    address public walletAddress;
+    uint256 public  AirdropAmount;
+    // address public walletAddress;
     event Claimed(address indexed _from, uint256 _dropAmount);
 
-constructor(address token_,address walletAddress_) public {
-        token=token_;
-        walletAddress =walletAddress_;
-}
-
-    function createAidrop(address token_, bytes32 merkleRoot_, uint256 AirdropAmount_) public{
+     constructor(address token_, bytes32 merkleRoot_, uint256 AirdropAmount_){
         token = token_;
         merkleRoot = merkleRoot_;
         AirdropAmount = AirdropAmount_;
 
-        require(
-            IERC20(token_).balanceOf(msg.sender) >= AirdropAmount_,
-            "MerkleDistributor: Insufficient balance"
-        );
-        IERC20(token_).transferFrom(msg.sender,address(this), AirdropAmount_);
+        // require(
+        //     IERC20(token_).balanceOf(msg.sender) >= AirdropAmount_,
+        //     "MerkleDistributor: Insufficient balance"
+        // );
+        // IERC20(token_).transferFrom(msg.sender,address(this), AirdropAmount_);
     }
 
     function claim(
@@ -49,4 +43,5 @@ constructor(address token_,address walletAddress_) public {
         require(IERC20(token).transfer(account, amount), "Transfer failed");
         emit Claimed(account, amount);
     }
+
 }
