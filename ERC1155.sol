@@ -18,7 +18,7 @@ contract Valorant is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
     uint256 public constant ValorantPoints =6;
 
     constructor(address initialOwner) ERC1155("ipfs://QmXT1U6Q11i1cPouzcKWbzAyZBb78nmxEtNQMx5ioh2wtf/{id}.json") Ownable(initialOwner) {
-        //after minting here mint function will not work
+
         _mint(msg.sender, SOVA, 100, "");
         _mint(msg.sender, BRIMSTON, 100, "");
         _mint(msg.sender, VIPER, 100, "");
@@ -45,7 +45,7 @@ contract Valorant is ERC1155, Ownable, ERC1155Burnable, ERC1155Supply {
         public
         onlyOwner
     {
-        
+         _mint(account, id, amount, data);
     }
 
     function mintBatch(address to, uint256[] memory ids, uint256[] memory amounts, bytes memory data)
