@@ -57,3 +57,5 @@ contract FinalNft is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return super.supportsInterface(interfaceId);
     }
 }
+https://ipfs.io/ipfs/ Add this before image
+Eg-https://ipfs.io/ipfs/Qma39j4mK2SiK1Z6PGp1jxyzc6VD7hLuD3yZgwRThVtJ5o
