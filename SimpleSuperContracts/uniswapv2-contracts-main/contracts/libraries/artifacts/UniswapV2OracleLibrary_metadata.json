@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"uniswapv2-contracts-main/contracts/libraries/UniswapV2OracleLibrary.sol": "UniswapV2OracleLibrary"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"uniswapv2-contracts-main/contracts/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0xf05c1530708d387bc82015339577adf6693e6828e8527ad5e6c104f39cdbdcb3",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://1bf377bf797f4d6d703619ec2c4e6aee01fdd5ff802f55fd51e575f44ec5be81",
+				"dweb:/ipfs/QmVyPGZ7pM68exvZT8Z5HYSE3sKNzDCC8DMppG3Yzfz5nU"
+			]
+		},
+		"uniswapv2-contracts-main/contracts/libraries/FixedPoint.sol": {
+			"keccak256": "0xa6a65be199e16e6cabca8dc0a32280cdafcefaf44338f324d9c94ed34ff215a2",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://fcdb3c537501472a5a938eeaaa6d9d9bebe62749ae9ad5f3239651be61cf0b3c",
+				"dweb:/ipfs/QmNyWu9Ahw14TxuvFREMfZi3dMWqF4s4dqh3AE3xyMty75"
+			]
+		},
+		"uniswapv2-contracts-main/contracts/libraries/UniswapV2OracleLibrary.sol": {
+			"keccak256": "0x11ce90036ccf6c7b242735dd0b09e982f0d5a3b80c118d45d7083c688285fc8c",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://95a993f54e95a1ede0810dc6377f2ea43a565a220041c5de03577bb05899bd0f",
+				"dweb:/ipfs/QmXdY11wUUvVF5ZLNygvBGyAeDxxDAukjvZFLsne4viUML"
+			]
+		}
+	},
+	"version": 1
+}

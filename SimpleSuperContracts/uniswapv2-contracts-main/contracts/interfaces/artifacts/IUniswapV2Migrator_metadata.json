@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountTokenMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountETHMin",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "migrate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"uniswapv2-contracts-main/contracts/interfaces/IUniswapV2Migrator.sol": "IUniswapV2Migrator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"uniswapv2-contracts-main/contracts/interfaces/IUniswapV2Migrator.sol": {
+			"keccak256": "0x27f9e5d9ea50723e9956b848d11663b4cb3d2bca1523f7fc3ed68da9a739679c",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://fbd3a49b148b1b37e740018ff3e6f741a7ec6a3442aa326c1d8a6add1b6bba25",
+				"dweb:/ipfs/QmPteRX2FASinCJ2i2itrhLoeSz6xr9rB1ZCnHqah6Qdej"
+			]
+		}
+	},
+	"version": 1
+}

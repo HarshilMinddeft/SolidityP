@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"uniswapv2-contracts-main/contracts/libraries/FixedPoint.sol": "FixedPoint"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"uniswapv2-contracts-main/contracts/libraries/FixedPoint.sol": {
+			"keccak256": "0xa6a65be199e16e6cabca8dc0a32280cdafcefaf44338f324d9c94ed34ff215a2",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://fcdb3c537501472a5a938eeaaa6d9d9bebe62749ae9ad5f3239651be61cf0b3c",
+				"dweb:/ipfs/QmNyWu9Ahw14TxuvFREMfZi3dMWqF4s4dqh3AE3xyMty75"
+			]
+		}
+	},
+	"version": 1
+}

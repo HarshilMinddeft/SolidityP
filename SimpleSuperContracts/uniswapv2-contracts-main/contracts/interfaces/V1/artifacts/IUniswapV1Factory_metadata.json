@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "getExchange",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"uniswapv2-contracts-main/contracts/interfaces/V1/IUniswapV1Factory.sol": "IUniswapV1Factory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"uniswapv2-contracts-main/contracts/interfaces/V1/IUniswapV1Factory.sol": {
+			"keccak256": "0x4a4fd51e6f2a1e61fb0bece030a9a518b5766666b46d0e0385a3589f7ff9c4cd",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://a6072c567f05de3aad5bf841cbc4d7995ad05b6b90a4a2d7633199b0606b9dc8",
+				"dweb:/ipfs/QmaGBacktcFymrimHf84yPod4H36N9ZNwpDdYeRpj9CmLM"
+			]
+		}
+	},
+	"version": 1
+}
