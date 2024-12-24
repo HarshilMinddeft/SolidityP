@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 contract Erc20Super is ERC20, Ownable ,ReentrancyGuard {
     using SafeERC20 for IERC20;
 
-    IERC20 public immutable underlyingToken;
+    IERC20 public immutable underlyingToken; // Native token address
     mapping(address => int256) public netFlowRates;  // Flow rate for each account
     mapping(address => uint256) public lastUpdated;  // Last update time for each account
 
@@ -42,7 +42,8 @@ contract Erc20Super is ERC20, Ownable ,ReentrancyGuard {
     }
 
     // Update the flow rate for a user (called by StreamManager contract)
-    function updateFlow(address account, int256 flowRate) internal  {
+    // Function will be changed to internal once testing completes
+    function updateFlow(address account, int256 flowRate) external   {
         _updateBalance(account);
         netFlowRates[account] += flowRate;
         lastUpdated[account] = block.timestamp;
