@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "./Erc20Super.sol";
+import "./SuperTokenWrapUnwrap.sol";
 
 contract StreamManager is ReentrancyGuard{
     
