@@ -3,11 +3,11 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "./SuperTokenWrapUnwrap.sol";
 
-contract StreamManager is ReentrancyGuard{
+contract StreamManager is ReentrancyGuard {
     
     Erc20Super public superToken;
     address public operator;
-    
+
     struct Stream {
         address sender;
         address receiver;
@@ -49,14 +49,14 @@ contract StreamManager is ReentrancyGuard{
 
         // Calculate 20-minute fee and required balance
         uint256 fee = uint256(flowRate * 20 * 60); // 20 minutes worth of tokens
-        uint256 requiredBalance = uint256(flowRate * 1800) + fee; // 0.5 hour + fee
+        uint256 requiredBalance = uint256(flowRate * 1800) + fee; // 0.5 hour + fee 1800sec = 30min
 
         require(
             superToken.balanceOf(msg.sender) >= requiredBalance,
             "Insufficient balance for stream"
         );
+ 
 
-        // Deduct the fee from the sender instantly not same as below decreasing balance everySecond
         superToken.transferFrom(msg.sender, address(this), fee);
 
         // Update token flows
@@ -75,11 +75,11 @@ contract StreamManager is ReentrancyGuard{
 
         senderStreams[msg.sender].push(streamId);
 
-        emit StreamCreated(streamId, msg.sender, receiver, flowRate, block.timestamp, fee);
+        emit StreamCreated(streamId, msg.sender, receiver, flowRate, block.timestamp, fee );
     }
 
 // Gas optimisation can be done in this function 
-    // Stop a stream
+    // Stop a stream 
     function stopStream(bytes32 streamId) external nonReentrant{
      Stream memory stream = streams[streamId];
          require(
@@ -115,7 +115,35 @@ contract StreamManager is ReentrancyGuard{
     );
 }
 
-    // Internal function to remove a stream from sender's active streams
+    function stopAllStreams(address sender) external nonReentrant {
+        require(msg.sender == operator, "Only the operator can stop all streams");
+
+        bytes32[] memory activeStreams = senderStreams[sender];
+        for (uint256 i = 0; i < activeStreams.length; i++) {
+            bytes32 streamId = activeStreams[i];
+            Stream memory stream = streams[streamId];
+
+            superToken.updateFlow(stream.sender, stream.flowRate);
+            superToken.updateFlow(stream.receiver, -stream.flowRate);
+            superToken.transfer(operator, stream.fee);
+
+            emit StreamStopped(
+                streamId,
+                stream.sender,
+                stream.receiver,
+                stream.flowRate,
+                block.timestamp,
+                msg.sender,
+                stream.fee
+            );
+
+            delete streams[streamId];
+        }
+
+        delete senderStreams[sender];
+    }
+
+    // Internal function to remove a stream from sender's active streams (OPTM)
     function _removeStreamFromSender(address sender, bytes32 streamId) internal {
         bytes32[] storage activeStreams = senderStreams[sender];
         for (uint256 i = 0; i < activeStreams.length; i++) {
